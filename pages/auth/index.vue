@@ -43,7 +43,13 @@
     },
     methods : {
       onSubmit(){
-        console.log(this.user)
+        this.$store.dispatch('login', {
+          isUser: this.isUser,
+          user: this.user
+        })
+        .then(res => {
+          this.$router.push('/')
+        })
       }
     }
   }

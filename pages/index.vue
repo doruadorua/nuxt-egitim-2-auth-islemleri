@@ -36,6 +36,7 @@
 <script>
   import Cookie from 'js-cookie'
   export default {
+    middleware: ['session-control', 'auth'],
     data() {
       return {
         storageValue : null,
@@ -55,13 +56,13 @@
         localStorage.removeItem('authKey')
       },
       setCookie(){
-        Cookie.set('authKey', this.cookieValue)
+        this.$store.commit('setAuthKey', this.cookieValue)
       },
       getCookie(){
-        this.fromCookie = Cookie.get('authKey')
+        this.fromCookie = this.$store.getters.getAuthKey
       },
       deleteCookie(){
-        Cookie.remove('authKey')
+        this.$store.commit('clearAuthKey', 'authKey')
       }
     }
   }

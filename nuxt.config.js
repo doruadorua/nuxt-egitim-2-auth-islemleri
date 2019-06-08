@@ -30,6 +30,12 @@ module.exports = {
   css: [
   ],
 
+  env: {
+    signinEndPoint: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=',
+    signupEndPoint: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=',
+    firebaseAPIKEY: 'AIzaSyCVGZS_ak5MI_FXRR3PF2iR8Lmbm8odwuw'
+  },
+
   /*
   ** Plugins to load before mounting the App
   */

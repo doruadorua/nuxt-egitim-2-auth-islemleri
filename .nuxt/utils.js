@@ -134,11 +134,11 @@ export async function setContext(app, context) {
       isDev: true,
       isHMR: false,
       app,
-
+      store: app.store,
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {}
+      env: {"signinEndPoint":"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=","signupEndPoint":"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=","firebaseAPIKEY":"AIzaSyCVGZS_ak5MI_FXRR3PF2iR8Lmbm8odwuw"}
     }
     // Only set once
     if (context.req) {
